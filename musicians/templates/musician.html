@@ -1,0 +1,14 @@
+<div class="musician">
+    
+    <h3><span id="nomArtiste" ng-if="!editMode">{{artist.fullName}}</span></h3>
+    <span id="nomInstrument" ng-if="!editMode">instrument: {{artist.instrument}}</span>
+        <div>
+            <input ng-model="editMusician.fullName" ng-if="editMode" type="text" placeholder="{{artist.fullName}}"></input>
+            <input ng-model="editMusician.instrument" id="instru" ng-if="editMode" type="text" placeholder="{{artist.instrument}}"></input>
+        </div>
+
+    <br />
+    <span><button type="submit" ng-click="deleteMusician(artist)">supprimer</button></span>
+    <span><button type="submit" ng-click="editMode=true">editer</button></span>
+    <span><button ng-if="editMode" type="submit" ng-click="saveMusician(artiste); editMode=false">valider</button></span>
+</div> 
